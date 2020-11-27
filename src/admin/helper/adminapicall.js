@@ -2,7 +2,7 @@ const { API } = require("../../Backend");
 
 //category calls
 export const createCategory = (userId,token, category) => {
-    return fetch(`${API}/category/create/${userId}`,{
+    return fetch(`https://evening-plateau-79134.herokuapp.com/${API}/category/create/${userId}`,{
         method:"POST",
     headers:{
         
@@ -21,7 +21,7 @@ export const createCategory = (userId,token, category) => {
 
 //get all categories
 export const getCategories = () => {
-    return fetch(`${API}/categories`,{
+    return fetch(`https://evening-plateau-79134.herokuapp.com/${API}/categories`,{
         method:"GET"
     }).then(response => {
 return response.json()
@@ -33,7 +33,7 @@ return response.json()
 //products calls
 
 export const createProduct = (userId,token,product) => {
-  return fetch(`${API}/product/create/${userId}`,{
+  return fetch(`https://evening-plateau-79134.herokuapp.com/${API}/product/create/${userId}`,{
     method:"POST",
     headers:{
         
@@ -50,7 +50,7 @@ export const createProduct = (userId,token,product) => {
 
 //get all products
 export const getProducts = () => {
-    return fetch(`${API}/products`, {
+    return fetch(`https://evening-plateau-79134.herokuapp.com/${API}/products`, {
       method: "GET"
     })
       .then(response => {
@@ -63,7 +63,7 @@ export const getProducts = () => {
 //delete a  product
 
 export const deletProduct = (productId, userId, token) => {
-    return fetch(`${API}/product/${productId}/${userId}`, {
+    return fetch(`https://evening-plateau-79134.herokuapp.com/${API}/product/${productId}/${userId}`, {
       method: "DELETE",
       headers: {
         Accept: "application/json",
@@ -78,7 +78,7 @@ export const deletProduct = (productId, userId, token) => {
 //get a product
 
 export const getProduct = productId => {
-    return fetch(`${API}/product/${productId}`,{
+    return fetch(`https://evening-plateau-79134.herokuapp.com/${API}/product/${productId}`,{
         method:"GET"
     })
     .then(response => {
@@ -91,7 +91,7 @@ return response.json()
 
 export const updateProduct = (productId,userId,token,product) => {
   console.log(product)  
-  return fetch(`${API}/product/${productId}/${userId}`,{
+  return fetch(`https://evening-plateau-79134.herokuapp.com/${API}/product/${productId}/${userId}`,{
       method:"PUT",
       headers:{
           
@@ -110,7 +110,7 @@ export const updateProduct = (productId,userId,token,product) => {
 
 export const updateCategory = (categoryId,userId,token,name) => {
   console.log("NAME: ",{name})
-  return fetch(`${API}/category/${categoryId}/${userId}`,{
+  return fetch(`https://evening-plateau-79134.herokuapp.com/${API}/category/${categoryId}/${userId}`,{
     method:"PUT",
 
     headers:{
@@ -130,7 +130,7 @@ export const updateCategory = (categoryId,userId,token,name) => {
 //delete a  category
 
 export const deletCategory = (categoryId, userId, token) => {
-  return fetch(`${API}/category/${categoryId}/${userId}`, {
+  return fetch(`https://evening-plateau-79134.herokuapp.com/${API}/category/${categoryId}/${userId}`, {
     method: "DELETE",
     headers: {
       Accept: "application/json",

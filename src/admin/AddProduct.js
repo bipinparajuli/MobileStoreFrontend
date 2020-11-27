@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { useEffect } from 'react'
-import { Link, Redirect,useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { isAuthenticated } from '../auth/helper'
 import Base from '../core/Base'
 import { createProduct, getCategories } from './helper/adminapicall'
@@ -26,7 +26,7 @@ const  {user,token} = isAuthenticated();
         formData:""
     })
 
-    const {name,description,price,stock,category,catogories,loading,error,createdProduct,getRedirected,formData} 
+    const {name,description,price,stock,catogories,error,createdProduct,formData} 
     = Values
 
     const preload = () => {
@@ -44,7 +44,7 @@ const  {user,token} = isAuthenticated();
 
     useEffect(() => {
         preload()
-    },[])
+    })
 
     const onSubmit = (event) => {
 event.preventDefault();
