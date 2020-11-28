@@ -44,7 +44,7 @@ const  {user,token} = isAuthenticated();
 
     useEffect(() => {
         preload()
-    })
+    },[])
 
     const onSubmit = (event) => {
 event.preventDefault();

@@ -7,8 +7,8 @@ import {signin,authenticate,isAuthenticated} from '../auth/helper/index'
 const SignIn = () => {
 
     const [Values, setValues] = useState({
-        email:"sameer@gmail.com",
-        password:"12345",
+        email:"",
+        password:"",
         error:"",
         loading:false,
         didRedirect:false
@@ -111,7 +111,6 @@ const performRedirect = ()=>{
        {errorMessege()}
         {signInForm()}
         {performRedirect()}
-    <p className="text-white text-center">{JSON.stringify(Values)}</p>
         </Base>
 
     )
