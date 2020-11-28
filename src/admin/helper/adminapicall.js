@@ -35,14 +35,13 @@ return response.json()
 export const createProduct = (userId,token,product) => {
   return fetch(`https://cors-anywhere.herokuapp.com/https://evening-plateau-79134.herokuapp.com/api/product/create/${userId}`,{
     method:"POST",
-    headers:{
-        
+    headers:{        
         Accept:"application/json",
         Authorization : `Bearer ${token}`
 
     },
     body:product    
-  }) .then(response => {
+  }).then(response => {
       return response.json()
   })
   .catch(err => console.log(err))
@@ -90,7 +89,7 @@ return response.json()
 //update a product
 
 export const updateProduct = (productId,userId,token,product) => {
-  console.log(product)  
+  console.log(product)
   return fetch(`https://cors-anywhere.herokuapp.com/https://evening-plateau-79134.herokuapp.com/api/product/${productId}/${userId}`,{
       method:"PUT",
       headers:{
@@ -100,7 +99,7 @@ export const updateProduct = (productId,userId,token,product) => {
   
       },
       body:product    
-    }) .then(response => {
+    }).then(response => {
         return response.json()
     })
     .catch(err => console.log(err))
