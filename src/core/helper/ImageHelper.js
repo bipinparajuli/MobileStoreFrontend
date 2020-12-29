@@ -7,7 +7,7 @@ return (
             <img
               src={imageurl}
               alt={imageurl}
-              style={{ maxHeight: "100%", maxWidth: "100%" }}
+              style={{ maxHeight: "100%", maxWidth: "100%",objectFit:'contain',height:'200px',width:"300px" }}
               className="mb-3 rounded"
             />
           </div>
