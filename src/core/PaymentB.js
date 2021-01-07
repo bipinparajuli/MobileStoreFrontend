@@ -34,10 +34,50 @@ getmeToken(userId,token).then(info => {
 })
     } 
 
+    const onPurchase = () => {
+        setInfo({loading:true})
+        let nonce;
+        let getNonce = info.instance.requestPaymentMethod()
+        .then(data => {
+            nonce=data.nonce
+            console.log('INFO' + nonce)
+
+            const paymentData = {
+            paymentMethodNonce:nonce,
+            amount:getAmount()
+        }
+        console.log("Success" + paymentData)
+
+        processPayment(userId,token,paymentData)
+        .then(response => {
+            setInfo({...info,success:response.success,loading:false})
+      console.log("Success")
+        
+    const orderData = {
+        products:products,
+        transction_id:response.transaction.id,
+        amount:response.transaction.amount
+    };
+    
+    createOrder(userId,token,orderData)
+})
+        cartEmpty(() => {
+            console.log("Did we got a crash ?")
+        })
+        setreload(!reload)
+    }) 
+        .catch(error => {
+            setInfo({loading: false,success:false})
+console.log(error)
+        
+        })
+    
+    }
+    
 const showbtdropIn = () => {
-//    console.log(info.clientToken)
+   console.log(info.clientToken)
    let messege;
-   if(info.clientToken == undefined){
+   if(info.clientToken === undefined){
        messege=(<h2>Please Login First.</h2>)
    } 
    else{
@@ -47,7 +87,7 @@ const showbtdropIn = () => {
    return (
         <div>
  
-{info.clientToken !== null && info.clientToken !== undefined && products.length > 0 ? (
+{info.clientToken !== null &&  products.length > 0 ? (
     <div>
     <DropIn
       options={{ authorization: info.clientToken }}
@@ -62,48 +102,15 @@ const showbtdropIn = () => {
 }
 
     useEffect(() => {
-console.log(userId,token)
+// console.log(userId,token)
         getToken(userId,token);
     }, [])
 
-const onPurchase = () => {
-    setInfo({loading:true})
-    let nonce;
-    console.log(info.instance)
-    let getNonce = info.instance.requestPaymentMethod()
-    .then(data => {
-        nonce=data.nonce
-    const paymentData = {
-        paymentMethodNonce:nonce,
-        amount:getAmount()
-    };
-    processPayment(userId,token,paymentData)
-    .then(response => {
-        setInfo({...info,success:response.success,loading:false})
-  console.log("Success")
 
-const orderData = {
-    products:products,
-    transction_id:response.transaction.id,
-    amount:response.transaction.amount
-};
-
-createOrder(userId,token,orderData)
-
-    cartEmpty(() => {
-        console.log("Did we got a crash ?")
-    })
-    setreload(!reload)
-    })
-    .catch(error => {
-        setInfo({loading: false,success:false})
-    })
-    })
-
-}
 
 const getAmount = () =>{
     let amount = 0
+console.log("getting")
     products.map(p => {
         amount = amount + p.price
     })

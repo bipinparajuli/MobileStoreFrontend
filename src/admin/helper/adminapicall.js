@@ -1,5 +1,6 @@
 const { API } = require("../../Backend");
 
+
 //category calls
 export const createCategory = (userId,token, category) => {
     return fetch(`${API}/category/create/${userId}`,{
@@ -50,11 +51,12 @@ export const createProduct = (userId,token,product) => {
 
 //get all products
 export const getProducts = () => {
+
     return fetch(`${API}/products`, {
       method: "GET"
     })
       .then(response => {
-    // console.log(response)
+     console.log(response)
         return response.json();
       })
       .catch(err => console.log(err));

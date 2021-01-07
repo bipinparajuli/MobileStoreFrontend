@@ -15,6 +15,7 @@ const loadAllProduct = () => {
 seterror(data.error)
         }
         else{
+console.log(data)
             setproducts(data)
         }
     })
