@@ -46,7 +46,11 @@ const ManageCatogories = () => {
       </Link>
       <div className="row">
         <div className="col-12">
+{/* <<<<<<< HEAD */}
           <h2 className="text-center text-white my-3">Total {Products.length} Category</h2>
+=======
+          <h2 className="text-center text-white my-3">Total {Products.length} products</h2>
+{/* >>>>>>> d8c760ba12ed9ac506a6a0934d1cf8cf558ff9e3 */}
           {
             console.log(Products),
           
