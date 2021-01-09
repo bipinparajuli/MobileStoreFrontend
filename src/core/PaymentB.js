@@ -86,7 +86,7 @@ const showbtdropIn = () => {
    
    return (
         <div>
-{info.clientToken !== null && products.length > 0 ? (
+{info.clientToken !== null && info.clientToken !== undefined &&  products.length > 0 ? (
     <div>
     <DropIn
       options={{ authorization: info.clientToken }}

@@ -12,7 +12,7 @@ const SignIn = () => {
         error:"",
         loading:false,
         didRedirect:false,
-        Id:""
+        // Id:""
     })
 
 const {email,password,error,loading,didRedirect,Id} = Values
@@ -51,7 +51,7 @@ const onSubmit = event => {
     setValues({...Values,error:false,loading:true})
     signin({email,password})
     .then(data =>{
-        console.log(data)
+        // console.log(data)
         if(data.error){
             setValues({...Values,error:data.error, loading:false})
         }
@@ -81,23 +81,38 @@ const performRedirect = ()=>{
         return <Redirect to="/" />
     }
 }
-const onSucess= (res)=>{
-setValues({Id:res.tokenId})
-console.log(Id);
-if(Id !== ""){
-    googleLogin({Id})
-    .then(data =>{
-        console.log(data)
-        authenticate(data,()=>{
-            setValues({
-                ...Values,didRedirect:true
+ const onSucess= (res)=>{
+     console.log(res.tokenId);
+// setValues({Id:res.tokenId},console.log(Id))
+const Id = res.tokenId
+    if(Id !== ""){
+        googleLogin({Id})
+        .then(data =>{
+            // console.log(data)
+            authenticate(data,()=>{
+                setValues({
+                    ...Values,didRedirect:true
+                })
             })
-        })
+    
+        }   ) 
+            .catch(e=>console.log(e))        
+    }
+    else{
+        setValues({Id:res.tokenId})
+        googleLogin({Id})
+        .then(data =>{
+            console.log(data)
+            authenticate(data,()=>{
+                setValues({
+                    ...Values,didRedirect:true
+                })
+            })
+    
+        }   ) 
+            .catch(e=>console.log(e))
 
-    }   ) 
-        .catch(e=>console.log(e))        
-}
- 
+    }
     
 }
 

@@ -32,6 +32,7 @@ const getARedirect = (redirect) => {
 return (
     AddtoCart && (
     <button
+    // disabled
                 onClick={addToCaRT}
                 className="btn btn-block btn-outline-success mt-2 mb-2"
               >
