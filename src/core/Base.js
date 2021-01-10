@@ -2,9 +2,11 @@ import React from 'react'
 import Menu from './Menu'
 
 const Base = ({title="My Title", description="My description", className="bg-dark text-white p-4",children}) => {
-    return (
-        <div>
-<Menu />
+
+
+return (
+<div>
+<Menu  />
             <div className="container-fluid">
                 <div className="jumbotron bg-dark text-center text-white">
     <h2 className="display-4">{title}</h2>

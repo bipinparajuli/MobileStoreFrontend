@@ -1,6 +1,9 @@
-import React, { Fragment } from 'react'
+import React, { Fragment,useState,useEffect } from 'react'
 import {Link,withRouter} from 'react-router-dom'
 import {isAuthenticated, signout } from '../auth/helper'
+import { getSearchItem } from '../user/helper/userapicalls'
+import { StateProvider, useStateValue } from './stateProvider'
+
 
 const currentTab = (history, path) => {
     // console.log(history.location.path,path)
@@ -14,8 +17,21 @@ const currentTab = (history, path) => {
     }
 }
 
+
 const Menu = ({history}) => {
 
+    const [state, setstate] = useState("")
+    const [{},dispatch] = useStateValue();
+
+useEffect(() => {
+    
+            dispatch({
+                type:"SEARCH",
+                item:state
+            })
+}, [state])
+
+    
 
 
     return (
@@ -70,6 +86,12 @@ SignIn
     }}>SignOut</span>
 </li>
 )}
+{/* <li> */}
+<div class="md-form active-pink active-pink-2 mb-3 mt-0">
+  <input onChange={e=>setstate(e.target.value)} value={state} class="form-control" type="text" placeholder="Search" aria-label="Search" />
+</div>
+{/* </li> */}
+
             </ul>
         </div>
     )
