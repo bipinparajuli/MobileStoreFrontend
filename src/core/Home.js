@@ -39,34 +39,24 @@ useEffect(() => {
     console.log(Search)
     setstate(products.filter((val)=>{
         if(Search == ""){
-            console.log("matching 1",val) 
+            // console.log("matching 1",val) 
             return val
         }
         else if (val.name.toLowerCase().includes(Search.toLowerCase())) {
-           console.log("matching",val)
+        //    console.log("matching",val)
             return val
         } 
     }) )
-}, [Search])
+}, [Search,products])
 
     return (
         <Base title="Home Page">
           <div className="row text-center">
-             <h1 className="text-white">All Products</h1>
+             <h1 className="text-white text-center">All Products</h1>
              <div className="row">
-                 {/* {products.filter((val)=>{
-                     if(Search == ""){
-                         return val
-                     }
-                     else if (val.name.toLowerCase().includes(Search.toLowerCase())) {
-                         return val
-                     } else {
-                     return val    
-                     }
-                 }) */}
-                 {console.log(state),state.map((product,index)=> {
+                 {state.map((product,index)=> {
 return (
-<div className="col-4 mb-4" key={index}>
+<div className="col-sm mb-4 mt-4" key={index}>
     <Card product={product} />
 </div>
 )
