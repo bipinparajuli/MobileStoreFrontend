@@ -17,7 +17,7 @@ return(
             <Link className="nav-link text-success" to="/admin/create/category">Create Categories</Link>
         </li>
         <li className="list-group-item">
-            <Link className="nav-link text-success" to="/admin/orders">Manage Orders</Link>
+            {/* <Link className="nav-link text-success" to="/admin/orders">Manage Orders</Link> */}
         </li>
         <li className="list-group-item">
             <Link className="nav-link text-success" to="/admin/product">Manage Products</Link>

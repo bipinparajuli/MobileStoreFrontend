@@ -34,7 +34,7 @@ return (
     <button
     // disabled
                 onClick={addToCaRT}
-                className="btn btn-block btn-outline-success mt-2 mb-2"
+                className="btn btn-block bg-success mt-2 mb-2 "
               >
                 Add to Cart
               </button>
@@ -56,12 +56,12 @@ setreload(!reload)
       </button>))
 }
     return (
-      <div className="card text-white bg-dark border border-info ">
+      <div  className="card text-dark bg-white shadow ">
         <div className="card-header lead">{cartTitle}</div>
         <div className="card-body">
           {getARedirect(redirect)}
           <ImageHelper product={product} /> 
-          <p className="lead bg-success font-weight-normal text-wrap">
+          <p className="lead  font-weight-normal text-wrap">
             {cartDescription}
           </p>
     <p className="btn btn-success rounded  btn-sm px-4">$ {cartPrice}</p>
