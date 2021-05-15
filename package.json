@@ -13,6 +13,7 @@
     "react-google-login": "^5.2.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "react-spinners": "^0.10.6",
     "splitting": "^1.0.6"
   },
   "scripts": {
