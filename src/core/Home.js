@@ -66,13 +66,13 @@ useEffect(() => {
 <button className="btn btn-secondary" >Shop Now</button>
 </div>
 <div className="col-6">
-<img className="withoutbgimage" src={img}/>
+<img style={{width:"100%",height:"auto"}} className="img-responsive withoutbgimage" src={img}/>
 
 </div>
            
                 </div>
           <div className=" row text-center">
-          <svg style={{zIndex:'1',marginTop:"15%"}} xmlns="http://www.w3.org/2000/svg" viewBox="1 1 1440 320"><path fill="#0099ff" fill-opacity="0.1" d="M0,160L30,144C60,128,120,96,180,106.7C240,117,300,171,360,202.7C420,235,480,245,540,245.3C600,245,660,235,720,192C780,149,840,75,900,37.3C960,0,1020,0,1080,16C1140,32,1200,64,1260,85.3C1320,107,1380,117,1410,122.7L1440,128L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path></svg>
+          <svg style={{zIndex:'1',marginTop:"15%",width:"100%",height:"auto"}} xmlns="http://www.w3.org/2000/svg" viewBox="1 1 1440 320"><path fill="#0099ff" fill-opacity="0.1" d="M0,160L30,144C60,128,120,96,180,106.7C240,117,300,171,360,202.7C420,235,480,245,540,245.3C600,245,660,235,720,192C780,149,840,75,900,37.3C960,0,1020,0,1080,16C1140,32,1200,64,1260,85.3C1320,107,1380,117,1410,122.7L1440,128L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path></svg>
              <h1 className="text-white text-center">All Products</h1>
              <div className="row">
                  { state.length > 0 ? state.map((product,index)=> {
