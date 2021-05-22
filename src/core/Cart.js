@@ -47,8 +47,8 @@ const loadCheckout = () =>{
     return (
         <Base title="Cart Page" description="Ready to checkout">
           <div className="row text-center">
-    <div className="col-6">{products == undefined ?(<h3>No Products in cart</h3>):loadAllProducts()}</div>
-    <div className="col-6">{loadCheckout()}</div>
+    <div className="col-6 cart">{products == undefined ?(<h3>No Products in cart</h3>):loadAllProducts()}</div>
+    <div className="col-6 cart">{loadCheckout()}</div>
 
           </div>
         </Base>

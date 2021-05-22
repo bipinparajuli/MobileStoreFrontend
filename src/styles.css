@@ -1,3 +1,8 @@
+html,*{
+  margin: 0;
+  padding: 0;
+}
+
 .btn,
 .jumbotron,
 .nav :hover {
@@ -10,7 +15,7 @@ body {
 .hover_effect{
 cursor: pointer;
   transition: all 2s ease;
-min-width: 33.33%;
+min-width: 322px;
 }
 .hover_effect:hover{
   transform: translateY(-5px);
@@ -35,4 +40,7 @@ footer{
 }
 .card{
   margin: 10px 0 10px 0;
+}
+.cart{
+  min-width: 400px;
 }

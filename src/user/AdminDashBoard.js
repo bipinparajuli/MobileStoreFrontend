@@ -60,9 +60,9 @@ const adminRightSide = () => {
         description="Manage all of your products here"
         className="container bg-success p-4"
         >
-<div className="row ">
-    <div className="col-3">{adminLeftSide()}</div>
-    <div className="col-9">
+<div className="row " style={{flexWrap:"wrap"}}>
+    <div className="col-5" style={{minWidth:"250px"}}>{adminLeftSide()}</div>
+    <div className="col-7">
 {adminRightSide()}
     </div>
 </div>
