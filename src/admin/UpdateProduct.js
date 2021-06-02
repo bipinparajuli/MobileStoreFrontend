@@ -5,6 +5,7 @@ import { isAuthenticated } from '../auth/helper'
 import Base from '../core/Base'
 import {getCategories, getProduct, updateProduct } from './helper/adminapicall'
 const UpdateProduct = ({match}) => {
+
 const history=useHistory()
 
 const  {user,token} = isAuthenticated();
@@ -28,6 +29,7 @@ const  {user,token} = isAuthenticated();
     = Values
 
     const preload = (productId) => {
+      console.log(productId);
         getProduct(productId).then(data => {
             console.log(data)
             if(data.error) {
@@ -68,6 +70,7 @@ preloadCategories();
     }
 
     useEffect(() => {
+      console.log(match);
         preload(match.params.productId)
     },[])
 
