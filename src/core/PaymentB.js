@@ -75,7 +75,7 @@ console.log(error)
     }
     
 const showbtdropIn = () => {
-   console.log(info.clientToken)
+//    console.log(info.clientToken)
    let messege;
    if(info.clientToken === undefined){
        messege=(<h2>Please Login First.</h2>)

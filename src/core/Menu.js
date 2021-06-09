@@ -42,11 +42,19 @@ useEffect(() => {
                         Home
                     </Link>
                 </li>
+
                 <li className="nav-item">
                     <Link style={currentTab(history,"/cart")} className='nav-link' to="/cart">
                         Cart
                     </Link>
                 </li>
+
+                <li className="nav-item">
+                    <Link style={currentTab(history,"/catalog")} className='nav-link' to="/catalog">
+                        Catalog
+                    </Link>
+                </li>
+
             {isAuthenticated() && isAuthenticated().user.role === 0 && (
                     <li className="nav-item">
                     <Link style={currentTab(history,"/user/dashboard")} className='nav-link' to="/user/dashboard">

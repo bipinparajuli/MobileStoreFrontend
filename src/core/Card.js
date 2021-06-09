@@ -56,15 +56,16 @@ setreload(!reload)
       </button>))
 }
     return (
+      <>
       <div  className="card text-dark bg-white shadow ">
-        <div className="card-header lead">{cartTitle}</div>
+        {/* <div className="card-header lead">{cartTitle}</div> */}
         <div className="card-body">
           {getARedirect(redirect)}
           <ImageHelper product={product} /> 
-          <p className="lead  font-weight-normal text-wrap">
+          {/* <p className="lead  font-weight-normal text-wrap">
             {cartDescription}
           </p>
-    <p className="btn btn-success rounded  btn-sm px-4">$ {cartPrice}</p>
+    <p className="btn btn-success rounded  btn-sm px-4">$ {cartPrice}</p> */}
           <div className="row">
             <div className="col-12">
               {showAddToCart(AddtoCart)}
@@ -75,6 +76,23 @@ setreload(!reload)
           </div>
         </div>
       </div>
+      <div className="card-body">
+      {getARedirect(redirect)}
+      {/* <ImageHelper product={product} />  */}
+      <p className="lead  font-weight-normal text-wrap">
+        {cartDescription}
+      </p>
+<p className="btn btn-success rounded  btn-sm px-4">$ {cartPrice}</p>
+      <div className="row">
+        <div className="col-12">
+          {/* {showAddToCart(AddtoCart)} */}
+        </div>
+        <div className="col-12">
+          {showRemoveFromCart(removeFromCart)}
+        </div>
+      </div>
+    </div>
+    </>
     );
   };
 

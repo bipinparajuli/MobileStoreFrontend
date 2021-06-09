@@ -13,7 +13,9 @@ import AddProduct from './admin/AddProduct';
 import ManageProducts from './admin/ManageProducts';
 import UpdateProduct from './admin/UpdateProduct';
 import Cart from './core/Cart';
+import Catalog from './core/Catalog'
 import UpdateCategory from './admin/UpdateCategory';
+import IndividualProduct from './core/IndividualProduct'
 
 const Routes = () => {
     
@@ -24,6 +26,10 @@ const Routes = () => {
             <Route path='/signup' exact component={Signup} />
             <Route path='/signin' exact component={Signin} />
             <Route path='/cart' exact component={Cart} />       
+            <Route path='/catalog' exact component={Catalog} />       
+            <Route path='/product/:productId' exact component={IndividualProduct} />
+
+
             <PrivateRoutes path='/user/dashboard' exact component={UserDashBoard} />
             <AdminRoutes path='/admin/dashboard' exact component={AdminDashBoard} />
             <AdminRoutes path='/admin/create/category' exact component={AddCategory} />
