@@ -5,7 +5,7 @@ import ImageHelper from './helper/ImageHelper';
 
 const Card = ({
     product,
-    AddtoCart = true,
+    AddtoCart = false,
 removeFromCart=false,
 reload = undefined,
 setreload = f => f,
@@ -85,10 +85,10 @@ setreload(!reload)
 <p className="btn btn-success rounded  btn-sm px-4">$ {cartPrice}</p>
       <div className="row">
         <div className="col-12">
-          {/* {showAddToCart(AddtoCart)} */}
+          {showAddToCart(AddtoCart)}
         </div>
         <div className="col-12">
-          {showRemoveFromCart(removeFromCart)}
+          {/* {showRemoveFromCart(removeFromCart)} */}
         </div>
       </div>
     </div>

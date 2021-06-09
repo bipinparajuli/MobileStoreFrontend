@@ -7,7 +7,8 @@ import { createProduct, getCategories } from './helper/adminapicall'
 
 
 const AddProduct = () => {
-const history=useHistory()
+
+  const history=useHistory()
 
 const  {user,token} = isAuthenticated();
 
@@ -31,13 +32,13 @@ const  {user,token} = isAuthenticated();
 
     const preload = () => {
         getCategories().then(data => {
-            console.log(data)
+            // console.log(data)
             if(data.error) {
                 setValues({...Values,error:data.error})
             }
             else{
                 setValues({...Values,catogories:data,formData:new FormData()})
-                console.log(catogories)
+                // console.log(catogories)
             }
         })
     }
@@ -47,30 +48,39 @@ const  {user,token} = isAuthenticated();
     },[])
 
     const onSubmit = (event) => {
-event.preventDefault();
-setValues({...Values,error:"",loading:true})
-createProduct(user._id,token, formData).then(data => {
-    if(data.error){
-        setValues({...Values,error:data.error})
-        
-      }
-    else{
-        setValues({
-            ...Values,
-            name:"",
-            description:"",
-            price:"",
-            photo:"",
-            stock:"",
-            category:"",
-            loading:false,
-            createdProduct:data.name
-        })
-        setTimeout(() => (
-          history.push("/admin/dashboard")
-), 3000);
-    }
-})
+
+      console.log(Values);
+
+      event.preventDefault();
+
+      setValues({...Values,error:"",loading:true})
+
+      createProduct(user._id,token, Values)
+          .then(data => {
+          console.log(data);
+            if(data.error)
+            {
+                setValues({...Values,error:data.error})
+                
+              }
+            else
+            {
+                      setValues({
+                          ...Values,
+                          name:"",
+                          description:"",
+                          price:"",
+                          photo:"",
+                          stock:"",
+                          category:"",
+                          loading:false,
+                          createdProduct:data.name
+                      })
+                      setTimeout(() => (
+                        history.push("/admin/dashboard")
+              ), 3000);
+        }
+}).catch(err=>console.log(err))
     }
 
 const successMessage = () => {

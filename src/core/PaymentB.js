@@ -109,7 +109,7 @@ const showbtdropIn = () => {
 
 const getAmount = () =>{
     let amount = 0
-console.log("getting")
+// console.log("getting")
     products.map(p => {
         amount = amount + p.price
     })
