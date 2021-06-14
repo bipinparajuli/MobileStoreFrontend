@@ -40,7 +40,7 @@ const onSubmit = event => {
         })
     }
 })
-.catch(console.log("Error in signup"))
+.catch(e=>console.log("Error in signup",e))
 }
 
     const signUpForm = () => {

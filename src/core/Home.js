@@ -28,6 +28,7 @@ const [{Search},dispatch] = useStateValue();
 // console.log(Search)
 const loadAllProduct = () => {
     getProducts().then(data => {
+      console.log(data);
         if(data.error){
 seterror(data.error)
         }

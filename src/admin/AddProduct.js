@@ -49,13 +49,13 @@ const  {user,token} = isAuthenticated();
 
     const onSubmit = (event) => {
 
-      console.log(Values);
+      
 
       event.preventDefault();
 
-      setValues({...Values,error:"",loading:true})
-
-      createProduct(user._id,token, Values)
+      setValues({...Values,formData:"",error:"",loading:true})
+      console.log(Values);
+      createProduct(user._id,token, formData)
           .then(data => {
           console.log(data);
             if(data.error)

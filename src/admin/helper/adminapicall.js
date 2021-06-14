@@ -34,10 +34,10 @@ return response.json()
 //products calls
 
 export const createProduct = (userId,token,product) => {
+  console.log(product);
   return fetch(`${API}/product/create/${userId}`,{
     method:"POST",
     headers:{
-        
         Accept:"application/json",
         Authorization : `Bearer ${token}`
 

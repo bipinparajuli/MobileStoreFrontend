@@ -18,7 +18,8 @@ import {API} from '../../Backend'
 
 
 export const signup = user => {
-return fetch(`${API}/signup`,{
+console.log(user);
+    return fetch(`${API}/signup`,{
     method:"POST",
     headers:{
         Accept:'application/json',
@@ -29,7 +30,7 @@ return fetch(`${API}/signup`,{
 .then(response => {
 return response.json();
 })
-.catch(err => console.log(err))
+.catch(err => err)
 }
 
 export const signin = user => {
