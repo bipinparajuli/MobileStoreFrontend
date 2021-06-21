@@ -80,7 +80,7 @@ setreload(!reload)
       {getARedirect(redirect)}
       {/* <ImageHelper product={product} />  */}
       <p className="lead  font-weight-normal text-wrap">
-        {cartDescription}
+        {cartTitle}
       </p>
 <p className="btn btn-success rounded  btn-sm px-4">$ {cartPrice}</p>
       <div className="row">

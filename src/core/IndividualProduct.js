@@ -18,14 +18,13 @@ const [allProduct, setAllProduct] = useState([])
 const [reload, setreload] = useState(false)
 
 useEffect(()=>{
-    // console.log(loadCart())
-    // console.log(match.params);
 getProduct(match.params.productId).then(data=>{
-    // console.log(data);
+
     setproduct(data)
+
 })
 getProducts(match.params.productId).then(product=>{
-    console.log(product);
+
     setAllProduct(product)
 })
 
@@ -47,9 +46,10 @@ const loadCheckout = () =>{
     return (
         <div>
                     <h3>{product.name}</h3>
-                    <h5>{product.price}</h5>
-
-<PaymentB products={products} setreload={setreload}  />
+             <hr style={{backgroundColor:"#777"}} />
+                    <p>$ {product.price}</p>
+<p>{product.description}</p>
+{/* <PaymentB products={products} setreload={setreload}  /> */}
 <button
     // disabled
                 // onClick={addToCaRT}
@@ -73,10 +73,8 @@ const loadCheckout = () =>{
               {
 allProduct.map(product=>
     {
-    console.log(product,"H");
         return(
 <div className="col-3">
-
             <Card product={product} />
             </div>
 

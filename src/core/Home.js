@@ -11,7 +11,7 @@ import Card from './Card'
 
 import { css } from "@emotion/core";
 import ClipLoader from "react-spinners/ClipLoader";
-
+import Skeleton from '../Skeleton/CardSkeleton'
 
 
 const Home = () => {
@@ -28,7 +28,7 @@ const [{Search},dispatch] = useStateValue();
 // console.log(Search)
 const loadAllProduct = () => {
     getProducts().then(data => {
-      console.log(data);
+    //   console.log(data);
         if(data.error){
 seterror(data.error)
         }
@@ -91,8 +91,8 @@ return (
                  }) 
                 : 
                 <>
-                
-                <ClipLoader  color={"white"} loading={true}  size={150} />                
+              {[1,2,3,4,5].map(data=><Skeleton />) } 
+                {/* <ClipLoader  color={"white"} loading={true}  size={150} />                 */}
                 
                 </>
                 }

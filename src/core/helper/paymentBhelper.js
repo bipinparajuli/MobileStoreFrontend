@@ -1,6 +1,7 @@
 const { API } = require("../../Backend");
 
 export const getmeToken = (userId,token) => {
+    console.log(userId);
     return fetch(`${API}/payment/gettoken/${userId}`,{
         method:"GET",
         headers:{
