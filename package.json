@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "braintree-web-drop-in": "^1.25.0",
     "braintree-web-drop-in-react": "^1.2.1",
+    "lodash": "^4.17.21",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-google-login": "^5.2.1",
