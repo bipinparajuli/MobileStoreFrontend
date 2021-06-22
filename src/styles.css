@@ -45,3 +45,12 @@ footer{
 .cart{
   min-width: 400px;
 }
+
+.advertising{
+  margin: 10% 0;
+}
+.carousel-control-next, .carousel-control-prev {
+  width: 40px !important;
+  height: 40px;
+  top: 30%;
+}

@@ -52,7 +52,7 @@ export const createProduct = (userId,token,product) => {
 //get all products
 export const getProducts = () => {
 
-    return fetch(`${API}/products`, {
+    return fetch(`${API}/products?sort=price`, {
       method: "GET"
     })
       .then(response => {

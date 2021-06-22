@@ -5,6 +5,8 @@ import Base from './Base'
 import { useStateValue } from './stateProvider'
 import {Link} from 'react-router-dom'
 import img from '../Assets/young-handsome-caucasian-man-excited-pointing-with-forefingers-away_1187-45478-removebg.png'
+import img1 from '../Assets/advertisement.jpg'
+
 
 import { getProducts } from '../admin/helper/adminapicall';
 import Card from './Card' 
@@ -12,7 +14,7 @@ import Card from './Card'
 import { css } from "@emotion/core";
 import ClipLoader from "react-spinners/ClipLoader";
 import Skeleton from '../Skeleton/CardSkeleton'
-
+import Crousel from '../core/Crousel'
 
 const Home = () => {
 
@@ -68,7 +70,7 @@ useEffect(() => {
 <button className="btn btn-secondary" >Shop Now</button>
 </div>
 <div className="col-6">
-<img style={{width:"100%",height:"auto"}} className="img-responsive withoutbgimage" src={img}/>
+{/* <img style={{width:"100%",height:"auto"}} className="img-responsive withoutbgimage" src={img}/> */}
 
 </div>
            
@@ -100,6 +102,20 @@ return (
           </div>
           </div>
 
+{/* advetising section */}
+
+<div className="row advertising">
+   <div className="col-6">
+   <img src={img1} alt="" style={{objectFit:"cover",height:"500px",width:"30%px",marginLeft:"10%"}} />
+   </div>
+
+   <div className="col-6">
+                <p>Nice tshirt</p>
+   </div>
+
+</div>
+
+<Crousel />
         </Base>
     )
 }
