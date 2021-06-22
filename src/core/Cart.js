@@ -40,7 +40,7 @@ const loadAllProducts = (product) =>{
 const loadCheckout = () =>{
     return (
         <div>
-<PaymentB products={products} setreload={setreload}  />
+{/* <PaymentB products={products} setreload={setreload}  /> */}
         </div>
     )
 }

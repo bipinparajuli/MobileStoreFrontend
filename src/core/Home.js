@@ -11,8 +11,6 @@ import img1 from '../Assets/advertisement.jpg'
 import { getProducts } from '../admin/helper/adminapicall';
 import Card from './Card' 
 
-import { css } from "@emotion/core";
-import ClipLoader from "react-spinners/ClipLoader";
 import Skeleton from '../Skeleton/CardSkeleton'
 import Crousel from '../core/Crousel'
 
@@ -46,6 +44,8 @@ seterror(data.error)
 const sortProduct = (e) => {
 // e.preventDefault();
 
+console.log(e);
+
 if(e == "name")
 {
     setproducts(_.sortBy(products,"name"));
@@ -53,7 +53,7 @@ if(e == "name")
 
 if(e == "namereverse")
 {
-    setproducts(_.sortBy(products,"name").reverse());
+    setproducts(_.reverse(_.sortBy(products,"name")));
 }
 
 if(e == "price")
@@ -63,7 +63,8 @@ if(e == "price")
 
 if(e == "pricereverse")
 {
-    setproducts(_.sortBy(products,"name").reverse());
+    setproducts(_.reverse(_.sortBy(products,"price")));
+    // setproducts(_.sortBy(products,"name").reverse());
 }
 
 }

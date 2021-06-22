@@ -8,6 +8,9 @@ import { loadCart } from './helper/CardHelper'
 import PaymentB from './PaymentB'
 import Image from '../core/helper/ImageHelper'
 import { Link } from 'react-router-dom'
+import { addItemToCart, removeItemFromCart } from './helper/CardHelper';
+import {toast} from 'react-toastify'
+
 const IndividualProduct = ({match}) => {
 
 const [products, setproducts] = useState([])
@@ -33,6 +36,10 @@ getProducts(match.params.productId).then(product=>{
 },[reload])
 
 
+const addToCaRT = () => {
+    addItemToCart(product);
+    toast("Added to cart",{type:"success"})
+}
 
 const loadAllProducts = (product) =>{
     return (
@@ -52,7 +59,7 @@ const loadCheckout = () =>{
 {/* <PaymentB products={products} setreload={setreload}  /> */}
 <button
     // disabled
-                // onClick={addToCaRT}
+                onClick={addToCaRT}
                 className="btn btn-block btn-outline-success mt-2 mb-2 "
               >
                 Add to Cart

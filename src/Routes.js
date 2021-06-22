@@ -16,11 +16,13 @@ import Cart from './core/Cart';
 import Catalog from './core/Catalog'
 import UpdateCategory from './admin/UpdateCategory';
 import IndividualProduct from './core/IndividualProduct'
-
+import {ToastContainer} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 const Routes = () => {
     
     return (
         <BrowserRouter>
+        <ToastContainer />
         <Switch>
             <Route path='/' exact component={Home} />
             <Route path='/signup' exact component={Signup} />
