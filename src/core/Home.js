@@ -148,7 +148,13 @@ return (
    </div>
 
    <div className="col-6">
-                <p>Nice tshirt</p>
+   <h2>
+   Code is classic
+   </h2>
+   <p>
+   You can rock this classic tshirt anywhere and for sure people will notice.
+
+   </p>
    </div>
 
 </div>
